@@ -24,11 +24,13 @@ DROP TABLE IF EXISTS `entries`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `entries` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `page` varchar(75) NOT NULL DEFAULT 'blog',
   `title` varchar(150) DEFAULT NULL,
   `entry` text,
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+  PRIMARY KEY (`id`),
+  KEY `page` (`page`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -37,7 +39,7 @@ CREATE TABLE `entries` (
 
 LOCK TABLES `entries` WRITE;
 /*!40000 ALTER TABLE `entries` DISABLE KEYS */;
-INSERT INTO `entries` VALUES (1,'First Entry','This is some text','2013-12-06 16:31:06'),(2,'Second Entry','More text and a <a href=“#”>link</a>','2013-12-06 16:41:18'),(3,'Third Entry','A third entry in the database','2013-12-06 16:41:37');
+INSERT INTO `entries` VALUES (1,'blog','First Entry','This is some text','2013-12-06 16:31:06'),(2,'blog','Second Entry','More text and a <a href=“#”>link</a>','2013-12-06 16:41:18'),(3,'blog','Third Entry','A third entry in the database','2013-12-06 16:41:37'),(4,'blog','Fourth Entry','This is a 4th Entry','2013-12-09 13:27:20'),(5,'blog','Fifth Entry','This is fifth entry','2013-12-09 13:36:08'),(6,'about','About the author','The author of this blog is totally rad','2013-12-11 02:12:23');
 /*!40000 ALTER TABLE `entries` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -50,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-12-06 22:59:19
+-- Dump completed on 2013-12-14  6:51:46
